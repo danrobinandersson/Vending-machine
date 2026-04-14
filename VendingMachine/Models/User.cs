@@ -1,6 +1,6 @@
-namespace Vending_machine.Models;
+namespace VendingMachine.Models;
 
-class User
+public class User
 {
     public string Name { get; set; }
     public int Money { get; private set; }

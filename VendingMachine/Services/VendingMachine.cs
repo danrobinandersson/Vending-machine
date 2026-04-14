@@ -1,6 +1,6 @@
-using Vending_machine.Models;
+using VendingMachine.Models;
 
-namespace Vending_machine.Services;
+namespace VendingMachine.Services;
 
 public class VendingMachine
 {
