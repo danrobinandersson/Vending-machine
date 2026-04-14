@@ -1,2 +1,2 @@
 # Vending-machine
-A concole vending machine project written in C#
+A console vending machine project written in C#
