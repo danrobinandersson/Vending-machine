@@ -32,8 +32,24 @@ while (true)
         machine.ShowProducts();
 
         Console.Write("Choose item number: ");
-        int choice = int.Parse(Console.ReadLine()!) - 1;
+        if (!int.TryParse(Console.ReadLine(), out int choice))
+        {
+            Console.WriteLine("Invalid input!");
+            Console.WriteLine("\nPress Enter to continue...");
+            Console.ReadLine();
+            continue;
+        }
 
+        choice -= 1;
+        
+        if (choice < 0 || choice >= machine.Products.Count)
+        {
+            Console.WriteLine("Invalid choice!");
+            Console.WriteLine("\nPress Enter to continue...");
+            Console.ReadLine();
+            continue;
+        }
+        
         var product = machine.GetProduct(choice);
 
         if (product == null)

@@ -10,8 +10,8 @@ public static class SeedData
         {
             new("Kebabrulle", 45),
             new("Kebab med bröd", 40),
-            new("Kebabpizza", 70),
-            new("Kebabtallrik", 59),
+            new("Kebabpizza", 59),
+            new("Kebabtallrik", 49),
             new("Falafelrulle", 42)
         };
     }
