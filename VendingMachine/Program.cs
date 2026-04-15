@@ -9,6 +9,7 @@ machine.Products = SeedData.GetProducts();
 
 while (true)
 {
+    Console.Clear();
     Console.WriteLine("\n--- VENDING MACHINE ---");
     Console.WriteLine("1. Show products");
     Console.WriteLine("2. Buy product");
@@ -17,10 +18,19 @@ while (true)
     Console.WriteLine("0. Exit");
 
     Console.Write("Choose: ");
-    string input = Console.ReadLine();
+    string? input = Console.ReadLine();
+    
+    if (string.IsNullOrWhiteSpace(input))
+    {
+        Console.WriteLine("Invalid input!");
+        Console.WriteLine("\nPress Enter to continue...");
+        Console.ReadLine();
+        continue;
+    }
 
     if (input == "1")
     {
+        Console.Clear();
         machine.ShowProducts();
 
         Console.WriteLine("\nPress Enter to continue...");
@@ -29,6 +39,7 @@ while (true)
 
     else if (input == "2")
     {
+        Console.Clear();
         machine.ShowProducts();
 
         Console.Write("Choose item number: ");
@@ -50,16 +61,12 @@ while (true)
             continue;
         }
         
-        var product = machine.GetProduct(choice);
+        var product = machine.GetProduct(choice)!;
 
-        if (product == null)
-        {
-            Console.WriteLine("Invalid choice!");
-        }
-        else if (user.SpendMoney(product.Price))
+        if (user.SpendMoney(product.Price))
         {
             user.AddItem(product);
-            Console.WriteLine("Purchase successful!");
+            Console.WriteLine($"You bought {product.Name} for {product.Price} kr. Remaining money: {user.Money} kr");
         }
         else
         {
@@ -72,6 +79,7 @@ while (true)
 
     else if (input == "3")
     {
+        Console.Clear();
         Console.WriteLine("\n--- Your Items ---");
 
         foreach (var item in user.BoughtItems)
@@ -85,6 +93,7 @@ while (true)
 
     else if (input == "4")
     {
+        Console.Clear();
         Console.WriteLine($"You have: {user.Money} kr");
 
         Console.WriteLine("\nPress Enter to continue...");
