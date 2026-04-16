@@ -24,6 +24,7 @@ Represents the user of the vending machine.
 Stores the user's name and available money
 Keeps track of purchased items
 Handles spending money and adding items
+
 🥤 Product
 
 Represents a product in the vending machine.
@@ -36,6 +37,7 @@ Represents the vending machine.
 Stores a list of products
 Displays available products
 Retrieves products safely based on user selection
+
 📦 SeedData
 
 Provides initial data (products) for the vending machine.
@@ -43,10 +45,10 @@ Provides initial data (products) for the vending machine.
 ▶️ Program
 
 The main entry point of the application.
-
 Handles user interaction
 Displays the menu
 Connects all classes together
+
 ⚙️ Features
 Menu-driven interface
 Input validation using TryParse
@@ -55,6 +57,7 @@ Prevents purchases without enough money
 Displays purchased items
 Shows remaining balance
 Clean console UI using Console.Clear()
+
 ▶️ How to Run
 Open the project in Rider or Visual Studio
 Build the project
